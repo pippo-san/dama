@@ -1,12 +1,22 @@
-/**
- *
- * @author Pippo & Neri
- */
+import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 public class JFrame extends javax.swing.JFrame {
 
     public JFrame() {
         initComponents();
     }
+    
+    Color marrone = new Color(205, 92, 92);
+    Color bianco = new Color(98, 90, 70);
+    JButton scacchiera[][]=new JButton[8][8];
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -93,74 +103,155 @@ public class JFrame extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        InizioGioco = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(255, 217, 108));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 13, 90, 90));
+
+        jButton2.setBackground(new java.awt.Color(141, 83, 31));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 13, 90, 90));
+
+        jButton3.setBackground(new java.awt.Color(255, 217, 108));
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 13, 90, 90));
+
+        jButton4.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 13, 90, 90));
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 13, 90, 90));
+
+        jButton6.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 13, 90, 90));
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 13, 90, 90));
+
+        jButton8.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 13, 90, 90));
+
+        jButton9.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 110, 90, 90));
+
+        jButton10.setBackground(new java.awt.Color(255, 217, 108));
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 110, 90, 90));
+
+        jButton11.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 110, 90, 90));
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 90, 90));
+
+        jButton13.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 110, 90, 90));
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 110, 90, 90));
+
+        jButton15.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 110, 90, 90));
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 110, 90, 90));
         getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 207, 90, 90));
+
+        jButton18.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 207, 90, 90));
         getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 207, 90, 90));
+
+        jButton20.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 207, 90, 90));
         getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 207, 90, 90));
+
+        jButton22.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 207, 90, 90));
         getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 207, 90, 90));
+
+        jButton24.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 207, 90, 90));
+
+        jButton25.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 304, 90, 90));
         getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 304, 90, 90));
+
+        jButton27.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 304, 90, 90));
         getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 304, 90, 90));
+
+        jButton29.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 304, 90, 90));
         getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 304, 90, 90));
+
+        jButton31.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 304, 90, 90));
         getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 304, 90, 90));
         getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 401, 90, 90));
+
+        jButton34.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 401, 90, 90));
         getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 401, 90, 90));
+
+        jButton36.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 401, 90, 90));
         getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 401, 90, 90));
+
+        jButton38.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 401, 90, 90));
         getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 401, 90, 90));
+
+        jButton40.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 401, 90, 90));
+
+        jButton41.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 498, 90, 90));
         getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 498, 90, 90));
+
+        jButton43.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 498, 90, 90));
         getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 498, 90, 90));
+
+        jButton45.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 498, 90, 90));
         getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 498, 90, 90));
+
+        jButton47.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 498, 90, 90));
         getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 498, 90, 90));
         getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 595, 90, 90));
+
+        jButton50.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 595, 90, 90));
         getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 595, 90, 90));
+
+        jButton52.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 595, 90, 90));
         getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 595, 90, 90));
+
+        jButton54.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 595, 90, 90));
         getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 595, 90, 90));
+
+        jButton56.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 595, 90, 90));
+
+        jButton57.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 692, 90, 90));
         getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 692, 90, 90));
+
+        jButton59.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 692, 90, 90));
         getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 692, 90, 90));
+
+        jButton61.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 692, 90, 90));
         getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 692, 90, 90));
+
+        jButton63.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 692, 90, 90));
         getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 692, 90, 90));
 
@@ -228,8 +319,104 @@ public class JFrame extends javax.swing.JFrame {
         jLabel17.setText("    E");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 790, 90, -1));
 
+        InizioGioco.setText("Inizio Gioco");
+        InizioGioco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InizioGiocoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public void JFrame(){
+        scacchiera[0][0]=jButton1;    
+        scacchiera[0][1]=jButton2;    
+        scacchiera[0][2]=jButton3;    
+        scacchiera[0][3]=jButton4;    
+        scacchiera[0][4]=jButton5;    
+        scacchiera[0][5]=jButton6;    
+        scacchiera[0][6]=jButton7;    
+        scacchiera[0][7]=jButton8;    
+        scacchiera[1][0]=jButton9;    
+        scacchiera[1][1]=jButton10;    
+        scacchiera[1][2]=jButton11;    
+        scacchiera[1][3]=jButton12;    
+        scacchiera[1][4]=jButton13;    
+        scacchiera[1][5]=jButton14;    
+        scacchiera[1][6]=jButton15;    
+        scacchiera[1][7]=jButton16;    
+        scacchiera[2][0]=jButton17;    
+        scacchiera[2][1]=jButton18;    
+        scacchiera[2][2]=jButton19;    
+        scacchiera[2][3]=jButton20;    
+        scacchiera[2][4]=jButton21;    
+        scacchiera[2][5]=jButton22;    
+        scacchiera[2][6]=jButton23;    
+        scacchiera[2][7]=jButton24;    
+        scacchiera[3][0]=jButton25;    
+        scacchiera[3][1]=jButton26;    
+        scacchiera[3][2]=jButton27;    
+        scacchiera[3][3]=jButton28;    
+        scacchiera[3][4]=jButton29;    
+        scacchiera[3][5]=jButton30;    
+        scacchiera[3][6]=jButton31;    
+        scacchiera[3][7]=jButton32;    
+        scacchiera[4][0]=jButton33;    
+        scacchiera[4][1]=jButton34;    
+        scacchiera[4][2]=jButton35;    
+        scacchiera[4][3]=jButton36;    
+        scacchiera[4][4]=jButton37;    
+        scacchiera[4][5]=jButton38;    
+        scacchiera[4][6]=jButton39;    
+        scacchiera[4][7]=jButton40;    
+        scacchiera[5][0]=jButton41;    
+        scacchiera[5][1]=jButton42;    
+        scacchiera[5][2]=jButton43;    
+        scacchiera[5][3]=jButton44;    
+        scacchiera[5][4]=jButton45;    
+        scacchiera[5][5]=jButton46;    
+        scacchiera[5][6]=jButton47;    
+        scacchiera[5][7]=jButton48;    
+        scacchiera[6][0]=jButton49;    
+        scacchiera[6][1]=jButton50;    
+        scacchiera[6][2]=jButton51;    
+        scacchiera[6][3]=jButton52;    
+        scacchiera[6][4]=jButton53;    
+        scacchiera[6][5]=jButton54;    
+        scacchiera[6][6]=jButton55;    
+        scacchiera[6][7]=jButton56;    
+        scacchiera[7][0]=jButton57;    
+        scacchiera[7][1]=jButton58;    
+        scacchiera[7][2]=jButton59;    
+        scacchiera[7][3]=jButton60;    
+        scacchiera[7][4]=jButton61;    
+        scacchiera[7][5]=jButton62;    
+        scacchiera[7][6]=jButton63;    
+        scacchiera[7][7]=jButton64;    
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Image img = ImageIO.read(getClass().getResource("resources/blu.png"));
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            Image img = ImageIO.read(getClass().getResource("resources/rosso.png"));
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void InizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InizioGiocoActionPerformed
+        
+    }//GEN-LAST:event_InizioGiocoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -259,11 +446,13 @@ public class JFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JFrame().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton InizioGioco;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
