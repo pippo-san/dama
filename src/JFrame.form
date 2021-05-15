@@ -38,7 +38,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6c" green="d9" red="ff" type="rgb"/>
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
         </Property>
       </Properties>
       <Events>
@@ -142,7 +142,7 @@
     <Component class="javax.swing.JButton" name="jButton10">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6c" green="d9" red="ff" type="rgb"/>
+          <Color blue="65" green="d1" red="f8" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>

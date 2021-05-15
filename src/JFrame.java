@@ -111,7 +111,7 @@ public class JFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 217, 108));
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -144,7 +144,7 @@ public class JFrame extends javax.swing.JFrame {
         jButton9.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 110, 90, 90));
 
-        jButton10.setBackground(new java.awt.Color(255, 217, 108));
+        jButton10.setBackground(new java.awt.Color(248, 209, 101));
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 110, 90, 90));
 
         jButton11.setBackground(new java.awt.Color(141, 83, 31));
