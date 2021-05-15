@@ -12,7 +12,7 @@ public class JFrame extends javax.swing.JFrame {
     public JFrame() {
         initComponents();
     }
-    
+    int utrmn=0;
     Color marrone = new Color(205, 92, 92);
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
