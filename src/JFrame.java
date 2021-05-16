@@ -12,7 +12,6 @@ public class JFrame extends javax.swing.JFrame {
     public JFrame() {
         initComponents();
     }
-    int utrmn=0;
     Color marrone = new Color(205, 92, 92);
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
@@ -109,6 +108,11 @@ public class JFrame extends javax.swing.JFrame {
         jLabel5.setText("8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
@@ -330,6 +334,32 @@ public class JFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     public void JFrame(){
+            
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Image img = ImageIO.read(getClass().getResource("resources/blu.png"));
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            Image img = ImageIO.read(getClass().getResource("resources/rosso.png"));
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void InizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InizioGiocoActionPerformed
+        
+    }//GEN-LAST:event_InizioGiocoActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         scacchiera[0][0]=jButton1;    
         scacchiera[0][1]=jButton2;    
         scacchiera[0][2]=jButton3;    
@@ -393,30 +423,8 @@ public class JFrame extends javax.swing.JFrame {
         scacchiera[7][4]=jButton61;    
         scacchiera[7][5]=jButton62;    
         scacchiera[7][6]=jButton63;    
-        scacchiera[7][7]=jButton64;    
-    }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            Image img = ImageIO.read(getClass().getResource("resources/blu.png"));
-            jButton1.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            Image img = ImageIO.read(getClass().getResource("resources/rosso.png"));
-            jButton2.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void InizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InizioGiocoActionPerformed
-        
-    }//GEN-LAST:event_InizioGiocoActionPerformed
+        scacchiera[7][7]=jButton64;
+    }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
