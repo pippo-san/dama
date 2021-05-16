@@ -15,6 +15,8 @@ public class JFrame extends javax.swing.JFrame {
     Color marrone = new Color(205, 92, 92);
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
+    Pedina PedineBlu[]=new Pedina[12];
+    Pedina PedineRosse[]=new Pedina[12];
     
     
     @SuppressWarnings("unchecked")
@@ -360,6 +362,7 @@ public class JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_InizioGiocoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        //Inizializzo bottoni
         scacchiera[0][0]=jButton1;    
         scacchiera[0][1]=jButton2;    
         scacchiera[0][2]=jButton3;    
@@ -424,6 +427,34 @@ public class JFrame extends javax.swing.JFrame {
         scacchiera[7][5]=jButton62;    
         scacchiera[7][6]=jButton63;    
         scacchiera[7][7]=jButton64;
+        
+        //Inizializzo pedineBlu
+        PedineBlu[0]=new Pedina(0, 1, true, false);
+        PedineBlu[1]=new Pedina(0, 3, true, false);
+        PedineBlu[2]=new Pedina(0, 5, true, false);
+        PedineBlu[3]=new Pedina(0, 7, true, false);
+        PedineBlu[4]=new Pedina(1, 0, true, false);
+        PedineBlu[5]=new Pedina(1, 2, true, false);
+        PedineBlu[6]=new Pedina(1, 4, true, false);
+        PedineBlu[7]=new Pedina(1, 6, true, false);
+        PedineBlu[8]=new Pedina(2, 1, true, false);
+        PedineBlu[9]=new Pedina(2, 3, true, false);
+        PedineBlu[10]=new Pedina(2, 5, true, false);
+        PedineBlu[11]=new Pedina(2, 7, true, false);
+        
+        //Inizializzo pedineRosse
+        PedineRosse[0]=new Pedina(7, 0, true, false);
+        PedineRosse[1]=new Pedina(7, 2, true, false);
+        PedineRosse[2]=new Pedina(7, 4, true, false);
+        PedineRosse[3]=new Pedina(7, 6, true, false);
+        PedineRosse[4]=new Pedina(6, 1, true, false);
+        PedineRosse[5]=new Pedina(6, 3, true, false);
+        PedineRosse[6]=new Pedina(6, 5, true, false);
+        PedineRosse[7]=new Pedina(6, 7, true, false);
+        PedineRosse[8]=new Pedina(5, 0, true, false);
+        PedineRosse[9]=new Pedina(5, 2, true, false);
+        PedineRosse[10]=new Pedina(5, 4, true, false);
+        PedineRosse[11]=new Pedina(5, 6, true, false);
     }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
