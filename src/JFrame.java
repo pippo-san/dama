@@ -16,8 +16,9 @@ public class JFrame extends javax.swing.JFrame {
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
     Pedina PedineBlu[]=new Pedina[12];
+    Image imgBlu;
     Pedina PedineRosse[]=new Pedina[12];
-    
+    Image imgRossa;
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -104,7 +105,7 @@ public class JFrame extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        InizioGioco = new javax.swing.JButton();
+        jButtonInizioGioco = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("8");
@@ -325,13 +326,13 @@ public class JFrame extends javax.swing.JFrame {
         jLabel17.setText("    E");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 790, 90, -1));
 
-        InizioGioco.setText("Inizio Gioco");
-        InizioGioco.addActionListener(new java.awt.event.ActionListener() {
+        jButtonInizioGioco.setText("Inizio Gioco");
+        jButtonInizioGioco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InizioGiocoActionPerformed(evt);
+                jButtonInizioGiocoActionPerformed(evt);
             }
         });
-        getContentPane().add(InizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, -1, -1));
+        getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -357,9 +358,12 @@ public class JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void InizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InizioGiocoActionPerformed
-        
-    }//GEN-LAST:event_InizioGiocoActionPerformed
+    private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
+        for(int i=0; i<12; i++){
+            scacchiera[PedineBlu[i].getX()][PedineBlu[i].getY()].setIcon(new ImageIcon(imgBlu));
+            scacchiera[PedineRosse[i].getX()][PedineRosse[i].getY()].setIcon(new ImageIcon(imgRossa));
+        }
+    }//GEN-LAST:event_jButtonInizioGiocoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //Inizializzo bottoni
@@ -455,6 +459,18 @@ public class JFrame extends javax.swing.JFrame {
         PedineRosse[9]=new Pedina(5, 2, true, false);
         PedineRosse[10]=new Pedina(5, 4, true, false);
         PedineRosse[11]=new Pedina(5, 6, true, false);
+        
+        try {
+            imgBlu = ImageIO.read(getClass().getResource("resources/blu.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            imgRossa = ImageIO.read(getClass().getResource("resources/rosso.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
@@ -491,7 +507,6 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton InizioGioco;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -556,6 +571,7 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonInizioGioco;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
