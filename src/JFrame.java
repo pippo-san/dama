@@ -119,19 +119,9 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 13, 90, 90));
 
         jButton2.setBackground(new java.awt.Color(141, 83, 31));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 13, 90, 90));
 
         jButton3.setBackground(new java.awt.Color(255, 217, 108));
@@ -339,25 +329,6 @@ public class JFrame extends javax.swing.JFrame {
     public void JFrame(){
             
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            Image img = ImageIO.read(getClass().getResource("resources/blu.png"));
-            jButton1.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            Image img = ImageIO.read(getClass().getResource("resources/rosso.png"));
-            jButton2.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
         for(int i=0; i<12; i++){
             scacchiera[PedineBlu[i].getX()][PedineBlu[i].getY()].setIcon(new ImageIcon(imgBlu));
