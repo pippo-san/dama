@@ -65,7 +65,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6c" green="d9" red="ff" type="rgb"/>
+          <Color blue="d7" green="f5" red="ff" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>

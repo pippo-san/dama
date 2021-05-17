@@ -20,7 +20,6 @@ public class JFrame extends javax.swing.JFrame {
     Pedina PedineRosse[]=new Pedina[12];
     Image imgRossa;
     
-    int utrmn=0;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,7 +124,7 @@ public class JFrame extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 13, 90, 90));
 
-        jButton3.setBackground(new java.awt.Color(255, 217, 108));
+        jButton3.setBackground(new java.awt.Color(255, 245, 215));
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 13, 90, 90));
 
         jButton4.setBackground(new java.awt.Color(141, 83, 31));
