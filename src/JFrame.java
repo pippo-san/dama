@@ -380,7 +380,7 @@ public class JFrame extends javax.swing.JFrame {
                 jButtonInizioGiocoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, -1, -1));
+        getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
