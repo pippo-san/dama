@@ -128,115 +128,115 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 13, 70, 70));
 
         jButton4.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 13, 90, 90));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 13, 70, 70));
 
         jButton5.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 13, 90, 90));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 13, 70, 70));
 
         jButton6.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 13, 90, 90));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 13, 70, 70));
 
         jButton7.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 13, 90, 90));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 13, 70, 70));
 
         jButton8.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 13, 90, 90));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 13, 70, 70));
 
         jButton9.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 70, 70));
 
         jButton10.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 110, 70, 70));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 70, 70));
 
         jButton11.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 110, 90, 90));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 110, 70, 70));
 
         jButton12.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 90, 90));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 70, 70));
 
         jButton13.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 110, 90, 90));
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 110, 70, 70));
 
         jButton14.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 110, 90, 90));
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 110, 70, 70));
 
         jButton15.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 110, 90, 90));
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 110, 70, 70));
 
         jButton16.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 110, 90, 90));
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 110, 70, 70));
 
         jButton17.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 207, 90, 90));
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 207, 70, 70));
 
         jButton18.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 207, 90, 90));
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 207, 70, 70));
 
         jButton19.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 207, 90, 90));
+        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 207, 70, 70));
 
         jButton20.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 207, 90, 90));
+        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 207, 70, 70));
 
         jButton21.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 207, 90, 90));
+        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 207, 70, 70));
 
         jButton22.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 207, 90, 90));
+        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 207, 70, 70));
 
         jButton23.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 207, 90, 90));
+        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 207, 70, 70));
 
         jButton24.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 207, 90, 90));
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 207, 70, 70));
 
         jButton25.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 304, 90, 90));
+        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 304, 70, 70));
 
         jButton26.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 304, 90, 90));
+        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 304, 70, 70));
 
         jButton27.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 304, 90, 90));
+        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 304, 70, 70));
 
         jButton28.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 304, 90, 90));
+        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 304, 70, 70));
 
         jButton29.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 304, 90, 90));
+        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 304, 70, 70));
 
         jButton30.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 304, 90, 90));
+        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 304, 70, 70));
 
         jButton31.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 304, 90, 90));
+        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 304, 70, 70));
 
         jButton32.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 304, 90, 90));
+        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 304, 70, 70));
 
         jButton33.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 401, 90, 90));
+        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 401, 70, 70));
 
         jButton34.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 401, 90, 90));
+        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 401, 70, 70));
 
         jButton35.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 401, 90, 90));
+        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 401, 70, 70));
 
         jButton36.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 401, 90, 90));
+        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 401, 70, 70));
 
         jButton37.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 401, 90, 90));
+        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 401, 70, 70));
 
         jButton38.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 401, 90, 90));
+        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 401, 70, 70));
 
         jButton39.setBackground(new java.awt.Color(255, 245, 215));
-        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 401, 90, 90));
+        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 401, 70, 70));
 
         jButton40.setBackground(new java.awt.Color(141, 83, 31));
-        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 401, 90, 90));
+        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 401, 70, 70));
 
         jButton41.setBackground(new java.awt.Color(141, 83, 31));
         getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 498, 90, 90));
