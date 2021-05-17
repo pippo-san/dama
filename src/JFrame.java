@@ -20,7 +20,6 @@ public class JFrame extends javax.swing.JFrame {
     Pedina PedineRosse[]=new Pedina[12];
     Image imgRossa;
     
-    int utrmn=0;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
