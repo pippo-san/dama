@@ -778,6 +778,7 @@ public class JFrame extends javax.swing.JFrame {
         for(int i=0; i<12; i++){
             scacchiera[PedineBlu[i].getX()][PedineBlu[i].getY()].setIcon(new ImageIcon(imgBlu));
             scacchiera[PedineRosse[i].getX()][PedineRosse[i].getY()].setIcon(new ImageIcon(imgRossa));
+            jButtonInizioGioco.setEnabled(false);
         }
     }//GEN-LAST:event_jButtonInizioGiocoActionPerformed
 
@@ -899,6 +900,7 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         }
+        
     }//GEN-LAST:event_mosse
 
     public static void main(String args[]) {
