@@ -119,6 +119,11 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 245, 215));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 70));
 
         jButton2.setBackground(new java.awt.Color(141, 83, 31));
@@ -302,12 +307,27 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 70, 70));
 
         jButton62.setBackground(new java.awt.Color(255, 245, 215));
+        jButton62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 70, 70));
 
         jButton63.setBackground(new java.awt.Color(141, 83, 31));
+        jButton63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 70, 70));
 
         jButton64.setBackground(new java.awt.Color(255, 245, 215));
+        jButton64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, 70, 70));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -501,6 +521,10 @@ public class JFrame extends javax.swing.JFrame {
             Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void mosse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mosse
+        
+    }//GEN-LAST:event_mosse
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
