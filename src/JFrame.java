@@ -127,120 +127,315 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 70));
 
         jButton2.setBackground(new java.awt.Color(141, 83, 31));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 70));
 
         jButton3.setBackground(new java.awt.Color(255, 245, 215));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 70));
 
         jButton4.setBackground(new java.awt.Color(141, 83, 31));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 70, 70));
 
         jButton5.setBackground(new java.awt.Color(255, 245, 215));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 70, 70));
 
         jButton6.setBackground(new java.awt.Color(141, 83, 31));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 70, 70));
 
         jButton7.setBackground(new java.awt.Color(255, 245, 215));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 70, 70));
 
         jButton8.setBackground(new java.awt.Color(141, 83, 31));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 70, 70));
 
         jButton9.setBackground(new java.awt.Color(141, 83, 31));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 70, 70));
 
         jButton10.setBackground(new java.awt.Color(255, 245, 215));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 70, 70));
 
         jButton11.setBackground(new java.awt.Color(141, 83, 31));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 70, 70));
 
         jButton12.setBackground(new java.awt.Color(255, 245, 215));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 70, 70));
 
         jButton13.setBackground(new java.awt.Color(141, 83, 31));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 70, 70));
 
         jButton14.setBackground(new java.awt.Color(255, 245, 215));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 70, 70));
 
         jButton15.setBackground(new java.awt.Color(141, 83, 31));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 70, 70));
 
         jButton16.setBackground(new java.awt.Color(255, 245, 215));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 70, 70));
 
         jButton17.setBackground(new java.awt.Color(255, 245, 215));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 70, 70));
 
         jButton18.setBackground(new java.awt.Color(141, 83, 31));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 70, 70));
 
         jButton19.setBackground(new java.awt.Color(255, 245, 215));
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 70, 70));
 
         jButton20.setBackground(new java.awt.Color(141, 83, 31));
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 70, 70));
 
         jButton21.setBackground(new java.awt.Color(255, 245, 215));
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 70, 70));
 
         jButton22.setBackground(new java.awt.Color(141, 83, 31));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 70, 70));
 
         jButton23.setBackground(new java.awt.Color(255, 245, 215));
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 70, 70));
 
         jButton24.setBackground(new java.awt.Color(141, 83, 31));
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 70, 70));
 
         jButton25.setBackground(new java.awt.Color(141, 83, 31));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 70, 70));
 
         jButton26.setBackground(new java.awt.Color(255, 245, 215));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 70, 70));
 
         jButton27.setBackground(new java.awt.Color(141, 83, 31));
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 70, 70));
 
         jButton28.setBackground(new java.awt.Color(255, 245, 215));
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 70, 70));
 
         jButton29.setBackground(new java.awt.Color(141, 83, 31));
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 70, 70));
 
         jButton30.setBackground(new java.awt.Color(255, 245, 215));
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 70, 70));
 
         jButton31.setBackground(new java.awt.Color(141, 83, 31));
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 70, 70));
 
         jButton32.setBackground(new java.awt.Color(255, 245, 215));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 70, 70));
 
         jButton33.setBackground(new java.awt.Color(255, 245, 215));
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 70, 70));
 
         jButton34.setBackground(new java.awt.Color(141, 83, 31));
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 70, 70));
 
         jButton35.setBackground(new java.awt.Color(255, 245, 215));
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 70, 70));
 
         jButton36.setBackground(new java.awt.Color(141, 83, 31));
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 70, 70));
 
         jButton37.setBackground(new java.awt.Color(255, 245, 215));
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 70, 70));
 
         jButton38.setBackground(new java.awt.Color(141, 83, 31));
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 70, 70));
 
         jButton39.setBackground(new java.awt.Color(255, 245, 215));
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 70, 70));
 
         jButton40.setBackground(new java.awt.Color(141, 83, 31));
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mosse(evt);
+            }
+        });
         getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 70, 70));
 
         jButton41.setBackground(new java.awt.Color(141, 83, 31));
