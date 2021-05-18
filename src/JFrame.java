@@ -16,9 +16,8 @@ public class JFrame extends javax.swing.JFrame {
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
     int posizioni[][]=new int[8][8];
-    Pedina PedineBlu[]=new Pedina[12];
+    Pedina Pedine[]=new Pedina[24];
     Image imgBlu;
-    Pedina PedineRosse[]=new Pedina[12];
     Image imgRossa;
     int ra, ca;
     
@@ -776,8 +775,8 @@ public class JFrame extends javax.swing.JFrame {
     }
     private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
         for(int i=0; i<12; i++){
-            scacchiera[PedineBlu[i].getX()][PedineBlu[i].getY()].setIcon(new ImageIcon(imgBlu));
-            scacchiera[PedineRosse[i].getX()][PedineRosse[i].getY()].setIcon(new ImageIcon(imgRossa));
+            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgBlu));
+            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgRossa));
             jButtonInizioGioco.setEnabled(false);
         }
     }//GEN-LAST:event_jButtonInizioGiocoActionPerformed
@@ -849,33 +848,31 @@ public class JFrame extends javax.swing.JFrame {
         scacchiera[7][6]=jButton63;    
         scacchiera[7][7]=jButton64;
         
-        //Inizializzo pedineBlu
-        PedineBlu[0]=new Pedina(0, 1, true, false);
-        PedineBlu[1]=new Pedina(0, 3, true, false);
-        PedineBlu[2]=new Pedina(0, 5, true, false);
-        PedineBlu[3]=new Pedina(0, 7, true, false);
-        PedineBlu[4]=new Pedina(1, 0, true, false);
-        PedineBlu[5]=new Pedina(1, 2, true, false);
-        PedineBlu[6]=new Pedina(1, 4, true, false);
-        PedineBlu[7]=new Pedina(1, 6, true, false);
-        PedineBlu[8]=new Pedina(2, 1, true, false);
-        PedineBlu[9]=new Pedina(2, 3, true, false);
-        PedineBlu[10]=new Pedina(2, 5, true, false);
-        PedineBlu[11]=new Pedina(2, 7, true, false);
-        
-        //Inizializzo pedineRosse
-        PedineRosse[0]=new Pedina(7, 0, true, false);
-        PedineRosse[1]=new Pedina(7, 2, true, false);
-        PedineRosse[2]=new Pedina(7, 4, true, false);
-        PedineRosse[3]=new Pedina(7, 6, true, false);
-        PedineRosse[4]=new Pedina(6, 1, true, false);
-        PedineRosse[5]=new Pedina(6, 3, true, false);
-        PedineRosse[6]=new Pedina(6, 5, true, false);
-        PedineRosse[7]=new Pedina(6, 7, true, false);
-        PedineRosse[8]=new Pedina(5, 0, true, false);
-        PedineRosse[9]=new Pedina(5, 2, true, false);
-        PedineRosse[10]=new Pedina(5, 4, true, false);
-        PedineRosse[11]=new Pedina(5, 6, true, false);
+        //Inizializzo pedine
+        Pedine[0]=new Pedina(0, 1, true, false);
+        Pedine[1]=new Pedina(0, 3, true, false);
+        Pedine[2]=new Pedina(0, 5, true, false);
+        Pedine[3]=new Pedina(0, 7, true, false);
+        Pedine[4]=new Pedina(1, 0, true, false);
+        Pedine[5]=new Pedina(1, 2, true, false);
+        Pedine[6]=new Pedina(1, 4, true, false);
+        Pedine[7]=new Pedina(1, 6, true, false);
+        Pedine[8]=new Pedina(2, 1, true, false);
+        Pedine[9]=new Pedina(2, 3, true, false);
+        Pedine[10]=new Pedina(2, 5, true, false);
+        Pedine[11]=new Pedina(2, 7, true, false);
+        Pedine[12]=new Pedina(7, 0, true, false);
+        Pedine[13]=new Pedina(7, 2, true, false);
+        Pedine[14]=new Pedina(7, 4, true, false);
+        Pedine[15]=new Pedina(7, 6, true, false);
+        Pedine[16]=new Pedina(6, 1, true, false);
+        Pedine[17]=new Pedina(6, 3, true, false);
+        Pedine[18]=new Pedina(6, 5, true, false);
+        Pedine[19]=new Pedina(6, 7, true, false);
+        Pedine[20]=new Pedina(5, 0, true, false);
+        Pedine[21]=new Pedina(5, 2, true, false);
+        Pedine[22]=new Pedina(5, 4, true, false);
+        Pedine[23]=new Pedina(5, 6, true, false);
         
         try {
             imgBlu = ImageIO.read(getClass().getResource("resources/blu.png"));
@@ -897,10 +894,18 @@ public class JFrame extends javax.swing.JFrame {
                     ra=r;
                     ca=c;
                     System.out.println(" "+ r + " " + c);
+                    break;
                 }
             }
         }
-        
+        for(int i=0; i<24; i++){
+            if(ra==Pedine[i].getX()){
+                if(ca==Pedine[i].getY()){
+                    
+                    break;
+                }
+            }
+        }
     }//GEN-LAST:event_mosse
 
     public static void main(String args[]) {
