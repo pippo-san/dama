@@ -15,10 +15,13 @@ public class JFrame extends javax.swing.JFrame {
     Color marrone = new Color(205, 92, 92);
     Color bianco = new Color(98, 90, 70);
     JButton scacchiera[][]=new JButton[8][8];
+    int posizioni[][]=new int[8][8];
     Pedina PedineBlu[]=new Pedina[12];
     Image imgBlu;
     Pedina PedineRosse[]=new Pedina[12];
     Image imgRossa;
+    int ra, ca;
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -823,7 +826,15 @@ public class JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void mosse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mosse
-        
+        for(int r=0; r<8; r++){
+            for(int c=0; c<8; c++){
+                if(evt.getActionCommand()==scacchiera[r][c].getActionCommand()){
+                    ra=r;
+                    ca=c;
+                    System.out.println(" "+ r + " " + c);
+                }
+            }
+        }
     }//GEN-LAST:event_mosse
 
     public static void main(String args[]) {
