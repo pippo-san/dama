@@ -410,6 +410,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 70, 70));
 
         jButton33.setBackground(new java.awt.Color(255, 245, 215));
+        jButton33.setActionCommand("33");
         jButton33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -418,6 +419,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 70, 70));
 
         jButton34.setBackground(new java.awt.Color(141, 83, 31));
+        jButton34.setActionCommand("34");
         jButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -426,6 +428,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 70, 70));
 
         jButton35.setBackground(new java.awt.Color(255, 245, 215));
+        jButton35.setActionCommand("35");
         jButton35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -434,6 +437,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 70, 70));
 
         jButton36.setBackground(new java.awt.Color(141, 83, 31));
+        jButton36.setActionCommand("36");
         jButton36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -442,6 +446,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 70, 70));
 
         jButton37.setBackground(new java.awt.Color(255, 245, 215));
+        jButton37.setActionCommand("37");
         jButton37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -450,6 +455,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 70, 70));
 
         jButton38.setBackground(new java.awt.Color(141, 83, 31));
+        jButton38.setActionCommand("38");
         jButton38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -458,6 +464,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 70, 70));
 
         jButton39.setBackground(new java.awt.Color(255, 245, 215));
+        jButton39.setActionCommand("39");
         jButton39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -466,6 +473,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 70, 70));
 
         jButton40.setBackground(new java.awt.Color(141, 83, 31));
+        jButton40.setActionCommand("40");
         jButton40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -474,6 +482,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 70, 70));
 
         jButton41.setBackground(new java.awt.Color(141, 83, 31));
+        jButton41.setActionCommand("41");
         jButton41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -482,6 +491,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 70, 70));
 
         jButton42.setBackground(new java.awt.Color(255, 245, 215));
+        jButton42.setActionCommand("42");
         jButton42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -490,6 +500,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 70, 70));
 
         jButton43.setBackground(new java.awt.Color(141, 83, 31));
+        jButton43.setActionCommand("43");
         jButton43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -498,6 +509,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 70, 70));
 
         jButton44.setBackground(new java.awt.Color(255, 245, 215));
+        jButton44.setActionCommand("44");
         jButton44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -506,6 +518,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 70, 70));
 
         jButton45.setBackground(new java.awt.Color(141, 83, 31));
+        jButton45.setActionCommand("45");
         jButton45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -514,6 +527,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 70, 70));
 
         jButton46.setBackground(new java.awt.Color(255, 245, 215));
+        jButton46.setActionCommand("46");
         jButton46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -522,6 +536,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 70, 70));
 
         jButton47.setBackground(new java.awt.Color(141, 83, 31));
+        jButton47.setActionCommand("47");
         jButton47.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -530,6 +545,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 70, 70));
 
         jButton48.setBackground(new java.awt.Color(255, 245, 215));
+        jButton48.setActionCommand("48");
         jButton48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -538,6 +554,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 70, 70));
 
         jButton49.setBackground(new java.awt.Color(255, 245, 215));
+        jButton49.setActionCommand("49");
         jButton49.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -546,6 +563,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 70, 70));
 
         jButton50.setBackground(new java.awt.Color(141, 83, 31));
+        jButton50.setActionCommand("50");
         jButton50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -554,6 +572,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 70, 70));
 
         jButton51.setBackground(new java.awt.Color(255, 245, 215));
+        jButton51.setActionCommand("51");
         jButton51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -562,6 +581,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 70, 70));
 
         jButton52.setBackground(new java.awt.Color(141, 83, 31));
+        jButton52.setActionCommand("52");
         jButton52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -570,6 +590,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 70, 70));
 
         jButton53.setBackground(new java.awt.Color(255, 245, 215));
+        jButton53.setActionCommand("53");
         jButton53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -578,6 +599,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 70, 70));
 
         jButton54.setBackground(new java.awt.Color(141, 83, 31));
+        jButton54.setActionCommand("54");
         jButton54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -586,6 +608,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 70, 70));
 
         jButton55.setBackground(new java.awt.Color(255, 245, 215));
+        jButton55.setActionCommand("55");
         jButton55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -594,6 +617,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 70, 70));
 
         jButton56.setBackground(new java.awt.Color(141, 83, 31));
+        jButton56.setActionCommand("56");
         jButton56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -602,6 +626,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 70, 70));
 
         jButton57.setBackground(new java.awt.Color(141, 83, 31));
+        jButton57.setActionCommand("57");
         jButton57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -610,6 +635,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 70, 70));
 
         jButton58.setBackground(new java.awt.Color(255, 245, 215));
+        jButton58.setActionCommand("58");
         jButton58.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -618,6 +644,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 70, 70));
 
         jButton59.setBackground(new java.awt.Color(141, 83, 31));
+        jButton59.setActionCommand("59");
         jButton59.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -626,6 +653,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 70, 70));
 
         jButton60.setBackground(new java.awt.Color(255, 245, 215));
+        jButton60.setActionCommand("60");
         jButton60.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -634,6 +662,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 70, 70));
 
         jButton61.setBackground(new java.awt.Color(141, 83, 31));
+        jButton61.setActionCommand("61");
         jButton61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -642,6 +671,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 70, 70));
 
         jButton62.setBackground(new java.awt.Color(255, 245, 215));
+        jButton62.setActionCommand("62");
         jButton62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -650,6 +680,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 70, 70));
 
         jButton63.setBackground(new java.awt.Color(141, 83, 31));
+        jButton63.setActionCommand("63");
         jButton63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
@@ -658,6 +689,7 @@ public class JFrame extends javax.swing.JFrame {
         getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 70, 70));
 
         jButton64.setBackground(new java.awt.Color(255, 245, 215));
+        jButton64.setActionCommand("64");
         jButton64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mosse(evt);
