@@ -12,15 +12,18 @@ public class JFrame extends javax.swing.JFrame {
     public JFrame() {
         initComponents();
     }
-    Color marrone = new Color(205, 92, 92);
+    Color marrone = new Color(141, 83, 31);
     Color bianco = new Color(98, 90, 70);
+    Color giallo = new Color(255, 255, 153);//Selezione mosse caselle
     JButton scacchiera[][]=new JButton[8][8];
     int posizioni[][]=new int[8][8];
     Pedina Pedine[]=new Pedina[24];
     Image imgBlu;
     Image imgRossa;
-    int ra, ca;
-    
+    int ra, ca;//Riga-Colonna attuale
+    boolean iniziato=false;
+    boolean pedinaisSelezionata=false;
+    char turno='r';//R=rosso B=blu DA IMPLEMENTARE
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -774,6 +777,7 @@ public class JFrame extends javax.swing.JFrame {
             
     }
     private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
+        //Imposto icona pedine sulla scacchiera
         for(int i=0; i<12; i++){
             scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgBlu));
         }      
@@ -781,6 +785,7 @@ public class JFrame extends javax.swing.JFrame {
             scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgRossa));
         }
         jButtonInizioGioco.setEnabled(false);
+        iniziato=true;
     }//GEN-LAST:event_jButtonInizioGiocoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -851,31 +856,31 @@ public class JFrame extends javax.swing.JFrame {
         scacchiera[7][7]=jButton64;
         
         //Inizializzo pedine
-        Pedine[0]=new Pedina(0, 1, true, false);
-        Pedine[1]=new Pedina(0, 3, true, false);
-        Pedine[2]=new Pedina(0, 5, true, false);
-        Pedine[3]=new Pedina(0, 7, true, false);
-        Pedine[4]=new Pedina(1, 0, true, false);
-        Pedine[5]=new Pedina(1, 2, true, false);
-        Pedine[6]=new Pedina(1, 4, true, false);
-        Pedine[7]=new Pedina(1, 6, true, false);
-        Pedine[8]=new Pedina(2, 1, true, false);
-        Pedine[9]=new Pedina(2, 3, true, false);
-        Pedine[10]=new Pedina(2, 5, true, false);
-        Pedine[11]=new Pedina(2, 7, true, false);
-        Pedine[12]=new Pedina(7, 0, true, false);
-        Pedine[13]=new Pedina(7, 2, true, false);
-        Pedine[14]=new Pedina(7, 4, true, false);
-        Pedine[15]=new Pedina(7, 6, true, false);
-        Pedine[16]=new Pedina(6, 1, true, false);
-        Pedine[17]=new Pedina(6, 3, true, false);
-        Pedine[18]=new Pedina(6, 5, true, false);
-        Pedine[19]=new Pedina(6, 7, true, false);
-        Pedine[20]=new Pedina(5, 0, true, false);
-        Pedine[21]=new Pedina(5, 2, true, false);
-        Pedine[22]=new Pedina(5, 4, true, false);
-        Pedine[23]=new Pedina(5, 6, true, false);
-        
+        Pedine[0]=new Pedina('b', 0, 1, true, false);
+        Pedine[1]=new Pedina('b', 0, 3, true, false);
+        Pedine[2]=new Pedina('b', 0, 5, true, false);
+        Pedine[3]=new Pedina('b', 0, 7, true, false);
+        Pedine[4]=new Pedina('b', 1, 0, true, false);
+        Pedine[5]=new Pedina('b', 1, 2, true, false);
+        Pedine[6]=new Pedina('b', 1, 4, true, false);
+        Pedine[7]=new Pedina('b', 1, 6, true, false);
+        Pedine[8]=new Pedina('b', 2, 1, true, false);
+        Pedine[9]=new Pedina('b', 2, 3, true, false);
+        Pedine[10]=new Pedina('b', 2, 5, true, false);
+        Pedine[11]=new Pedina('b', 2, 7, true, false);
+        Pedine[12]=new Pedina('r', 7, 0, true, false);
+        Pedine[13]=new Pedina('r', 7, 2, true, false);
+        Pedine[14]=new Pedina('r', 7, 4, true, false);
+        Pedine[15]=new Pedina('r', 7, 6, true, false);
+        Pedine[16]=new Pedina('r', 6, 1, true, false);
+        Pedine[17]=new Pedina('r', 6, 3, true, false);
+        Pedine[18]=new Pedina('r', 6, 5, true, false);
+        Pedine[19]=new Pedina('r', 6, 7, true, false);
+        Pedine[20]=new Pedina('r', 5, 0, true, false);
+        Pedine[21]=new Pedina('r', 5, 2, true, false);
+        Pedine[22]=new Pedina('r', 5, 4, true, false);
+        Pedine[23]=new Pedina('r', 5, 6, true, false);
+        //Carico texture pedine
         try {
             imgBlu = ImageIO.read(getClass().getResource("resources/blu.png"));
         } catch (IOException ex) {
@@ -896,20 +901,91 @@ public class JFrame extends javax.swing.JFrame {
                     ra=r;
                     ca=c;
                     System.out.println(" "+ r + " " + c);
-                    break;
                 }
             }
         }
-        for(int i=0; i<24; i++){
-            if(ra==Pedine[i].getX()){
-                if(ca==Pedine[i].getY()){
-                    
-                    break;
+        
+        if(!pedinaisSelezionata){
+            if(iniziato){//Esegue solo se è stato premuto il bottone avvia
+                for(int i=0; i<24; i++){
+                        if(trovaPedina(i)){
+                            System.out.println(Pedine[i].toString());
+                            if(Pedine[i].getColore()=='b'){
+                                try {
+                                //Controllo l'icon per sapere se la casella è già occupata
+                                    if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==null)
+                                    scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].setBackground(giallo);//Diagonale in basso verso sinistra
+                                } catch (Exception e) {
+                                }
+                                try {
+                                    //Controllo l'icon per sapere se la casella è già occupata
+                                    if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==null)
+                                    scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].setBackground(giallo);//Diagonale in basso verso destra
+                                } catch (Exception e) {
+                                }
+                            }
+                            if(Pedine[i].getColore()=='r'){
+                                try {
+                                    //Controllo l'icon per sapere se la casella è già occupata
+                                    if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==null)
+                                    scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].setBackground(giallo);//Diagonalein alto verso sinistra
+                                } catch (Exception e) {
+                                }
+                                try {
+                                    //Controllo l'icon per sapere se la casella è già occupata
+                                    if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==null)
+                                    scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].setBackground(giallo);//Diagonalein alto verso destra
+                                } catch (Exception e) {
+                                }
+                            }
+                            pedinaisSelezionata=true;
+                            break;
+                        }
+                    }
                 }
             }
+        else{
+            spostaPedina(); 
         }
+
     }//GEN-LAST:event_mosse
 
+    private boolean trovaPedina(int i){
+            if(ra==Pedine[i].getX() && Pedine[i].isViva()){//Se non è viva non ha senso controllare
+                if(ca==Pedine[i].getY()){
+                    //System.out.println(Pedine[i].toString());
+                    return true;
+                }
+            }
+            return false;
+    }
+    
+    private void spostaPedina(){
+        if(scacchiera[ra][ca].getBackground() == giallo) {
+            for(int i = 0; i < 24; i++) {
+                if(trovaPedina(i)) {
+                    Pedine[i].setX(ra);
+                    Pedine[i].setY(ca);
+                    if(turno == 'r') {
+                        scacchiera[ra][ca].setIcon(new ImageIcon(imgBlu));
+                    }else{
+                        scacchiera[ra][ca].setIcon(new ImageIcon(imgRossa));
+                    }
+                }
+
+            }
+        }else{
+            for(int r = 0; r < 8; r++) {
+                for(int c = 0; c < 8; c++) {
+                    if(scacchiera[r][c].getBackground() == giallo) {
+                        scacchiera[r][c].setBackground(marrone);//Tolgo selezione visiva(giallo)
+                    }
+                }
+            }
+
+        }
+        pedinaisSelezionata=false;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
