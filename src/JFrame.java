@@ -776,9 +776,11 @@ public class JFrame extends javax.swing.JFrame {
     private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
         for(int i=0; i<12; i++){
             scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgBlu));
+        }      
+        for(int i=12; i<24; i++){
             scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgRossa));
-            jButtonInizioGioco.setEnabled(false);
         }
+        jButtonInizioGioco.setEnabled(false);
     }//GEN-LAST:event_jButtonInizioGiocoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
