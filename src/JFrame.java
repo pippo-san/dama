@@ -960,6 +960,16 @@ public class JFrame extends javax.swing.JFrame {
             return false;
     }
     
+    private void togliGiallo(){
+        for(int r = 0; r < 8; r++) {
+                for(int c = 0; c < 8; c++) {
+                    if(scacchiera[r][c].getBackground() == giallo) {
+                        scacchiera[r][c].setBackground(marrone);//Tolgo selezione visiva(giallo)
+                    }
+                }
+            }
+    }
+    
     private void spostaPedina(){
         if(scacchiera[ra][ca].getBackground() == giallo) {
             for(int i = 0; i < 24; i++) {
@@ -967,22 +977,16 @@ public class JFrame extends javax.swing.JFrame {
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
-                        scacchiera[ra][ca].setIcon(new ImageIcon(imgBlu));
-                    }else{
                         scacchiera[ra][ca].setIcon(new ImageIcon(imgRossa));
+                    }else{
+                        scacchiera[ra][ca].setIcon(new ImageIcon(imgBlu));
                     }
                 }
 
             }
+        togliGiallo();
         }else{
-            for(int r = 0; r < 8; r++) {
-                for(int c = 0; c < 8; c++) {
-                    if(scacchiera[r][c].getBackground() == giallo) {
-                        scacchiera[r][c].setBackground(marrone);//Tolgo selezione visiva(giallo)
-                    }
-                }
-            }
-
+            togliGiallo();
         }
         pedinaisSelezionata=false;
     }
