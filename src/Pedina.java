@@ -1,14 +1,20 @@
 public class Pedina {
+    private char colore;//R=rosso B=blu
     private int x;
     private int y;
     private boolean viva;
     private boolean dama;
 
-    public Pedina(int x, int y, boolean viva, boolean dama) {
+    public Pedina(char colore, int x, int y, boolean viva, boolean dama) {
+        this.colore = colore;
         this.x = x;
         this.y = y;
         this.viva = viva=true;
         this.dama = dama=false;
+    }
+
+    public char getColore() {
+        return colore;
     }
 
     public int getX() {
@@ -42,6 +48,10 @@ public class Pedina {
     public void setDama(boolean dama) {
         this.dama = dama;
     }
+
+    @Override
+    public String toString() {
+        return "Pedina{" + "colore=" + colore + ", viva=" + viva + ", dama=" + dama + '}';
+    }
     
- 
 }
