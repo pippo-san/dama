@@ -945,7 +945,7 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         else{
-            spostaPedina(); 
+            spostaPedina();       
         }
 
     }//GEN-LAST:event_mosse
@@ -979,14 +979,17 @@ public class JFrame extends javax.swing.JFrame {
     
     private void spostaPedina(){
         if(scacchiera[ra][ca].getBackground() == giallo) {
+            System.out.println("carm,elo");
             for(int i = 0; i < 24; i++) {
-                if(trovaPedina(i)) {
+                if(trovaPedina(i)) {           
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
                         scacchiera[ra][ca].setIcon(new ImageIcon(imgRossa));
+                        cambiaTurno();
                     }else{
                         scacchiera[ra][ca].setIcon(new ImageIcon(imgBlu));
+                        cambiaTurno();
                     }
                 }
 
