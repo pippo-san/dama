@@ -21,6 +21,7 @@ public class JFrame extends javax.swing.JFrame {
     Image imgBlu;
     Image imgRossa;
     int ra, ca;//Riga-Colonna attuale
+    int rp, cp;//Riga-Colonna precedente
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
     char turno='r';//R=rosso B=blu DA IMPLEMENTARE
@@ -898,6 +899,8 @@ public class JFrame extends javax.swing.JFrame {
         for(int r=0; r<8; r++){
             for(int c=0; c<8; c++){
                 if(evt.getActionCommand()==scacchiera[r][c].getActionCommand()){
+                    rp=ra;
+                    cp=ca;
                     ra=r;
                     ca=c;
                     System.out.println(" "+ r + " " + c);
@@ -960,6 +963,16 @@ public class JFrame extends javax.swing.JFrame {
             return false;
     }
     
+    private boolean trovaPedinaVecchia(int i){
+        if(rp==Pedine[i].getX() && Pedine[i].isViva()){//Se non è viva non ha senso controllare
+                if(cp==Pedine[i].getY()){
+                    //System.out.println(Pedine[i].toString());
+                    return true;
+                }
+            }
+            return false;
+    }
+    
     private void togliGiallo(){
         for(int r = 0; r < 8; r++) {
                 for(int c = 0; c < 8; c++) {
@@ -981,7 +994,7 @@ public class JFrame extends javax.swing.JFrame {
         if(scacchiera[ra][ca].getBackground() == giallo) {
             System.out.println("carm,elo");
             for(int i = 0; i < 24; i++) {
-                if(trovaPedina(i)) {           
+                if(trovaPedinaVecchia(i)) {
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
