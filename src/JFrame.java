@@ -970,6 +970,13 @@ public class JFrame extends javax.swing.JFrame {
             }
     }
     
+    private void cambiaTurno(){
+        if(turno=='r')
+            turno='b';
+        else
+            turno='r';
+    }
+    
     private void spostaPedina(){
         if(scacchiera[ra][ca].getBackground() == giallo) {
             for(int i = 0; i < 24; i++) {
