@@ -1008,10 +1008,16 @@ public class JFrame extends javax.swing.JFrame {
 
             }
         togliGiallo();
+        togliImmagine();
         }else{
-            togliGiallo();
+            togliGiallo();          
         }
         pedinaisSelezionata=false;
+    }
+    
+    private void togliImmagine(){               
+        scacchiera[rp][cp].setIcon(null);     
+        System.out.println("gianna");
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
