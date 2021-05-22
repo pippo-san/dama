@@ -1284,6 +1284,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTurno">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="turno: rosso"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="670" y="206" width="100" height="30"/>

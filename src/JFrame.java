@@ -772,6 +772,8 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+
+        jLabelTurno.setText("turno: rosso");
         getContentPane().add(jLabelTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 206, 100, 30));
 
         pack();
@@ -919,13 +921,28 @@ public class JFrame extends javax.swing.JFrame {
                                 try {
                                 //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==null)
-                                    scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].setBackground(giallo);//Diagonale in basso verso sinistra
+                                        scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].setBackground(giallo);//Diagonale in basso verso sinistra
+                                    else{
+                                        
+                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==imgRossa){
+                                            System.out.println("sasso");
+                                            scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].setBackground(giallo);
+                                        }
+                                    }
                                 } catch (Exception e) {
                                 }
                                 try {
                                     //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==null)
-                                    scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].setBackground(giallo);//Diagonale in basso verso destra
+                                        scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].setBackground(giallo);//Diagonale in basso verso destra
+                                    else{
+                                        
+                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==imgRossa){
+                                            System.out.println("sasso");
+                                            scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].setBackground(giallo);
+                                        }
+                                            
+                                    }
                                 } catch (Exception e) {
                                 }
                             }
@@ -934,13 +951,30 @@ public class JFrame extends javax.swing.JFrame {
                                 try {
                                     //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==null)
-                                    scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].setBackground(giallo);//Diagonalein alto verso sinistra
+                                        scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].setBackground(giallo);//Diagonalein alto verso sinistra
+                                    else{
+                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==imgBlu){
+                                            System.out.println("sasso");
+                                            scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].setBackground(giallo);
+                                        }
+                                            
+                                    }
+                                        
+                                        
                                 } catch (Exception e) {
                                 }
                                 try {
                                     //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==null)
-                                    scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].setBackground(giallo);//Diagonalein alto verso destra
+                                        scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].setBackground(giallo);//Diagonalein alto verso destra
+                                    else{
+                                        System.out.println("sasso");
+                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==imgBlu){
+                                            System.out.println("sasso");
+                                            scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].setBackground(giallo);
+                                        }
+                                            
+                                    }
                                 } catch (Exception e) {
                                 }
                             }
@@ -1024,6 +1058,10 @@ public class JFrame extends javax.swing.JFrame {
     
     private void togliImmagine(){               
         scacchiera[rp][cp].setIcon(null);     
+    }
+    
+    private void mangia(){
+        
     }
     
     public static void main(String args[]) {
