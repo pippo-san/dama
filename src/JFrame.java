@@ -112,6 +112,7 @@ public class JFrame extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jButtonInizioGioco = new javax.swing.JButton();
+        jLabelTurno = new javax.swing.JLabel();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("8");
@@ -771,6 +772,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+        getContentPane().add(jLabelTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 206, 100, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -913,7 +915,7 @@ public class JFrame extends javax.swing.JFrame {
                 for(int i=0; i<24; i++){
                         if(trovaPedina(i)){
                             System.out.println(Pedine[i].toString());
-                            if(Pedine[i].getColore()=='b'){
+                            if(Pedine[i].getColore()=='b' && turno=='b'){
                                 try {
                                 //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==null)
@@ -927,7 +929,8 @@ public class JFrame extends javax.swing.JFrame {
                                 } catch (Exception e) {
                                 }
                             }
-                            if(Pedine[i].getColore()=='r'){
+                            
+                            if(Pedine[i].getColore()=='r' && turno=='r'){
                                 try {
                                     //Controllo l'icon per sapere se la casella è già occupata
                                     if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==null)
@@ -941,6 +944,7 @@ public class JFrame extends javax.swing.JFrame {
                                 } catch (Exception e) {
                                 }
                             }
+                            
                             pedinaisSelezionata=true;
                             break;
                         }
@@ -984,15 +988,18 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void cambiaTurno(){
-        if(turno=='r')
+        if(turno=='r'){
+            jLabelTurno.setText("Turno: blu");
             turno='b';
-        else
+        }
+        else{
+            jLabelTurno.setText("Turno: rosso");
             turno='r';
+        }
     }
     
     private void spostaPedina(){
         if(scacchiera[ra][ca].getBackground() == giallo) {
-            System.out.println("carm,elo");
             for(int i = 0; i < 24; i++) {
                 if(trovaPedinaVecchia(i)) {
                     Pedine[i].setX(ra);
@@ -1017,8 +1024,8 @@ public class JFrame extends javax.swing.JFrame {
     
     private void togliImmagine(){               
         scacchiera[rp][cp].setIcon(null);     
-        System.out.println("gianna");
     }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1135,5 +1142,6 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelTurno;
     // End of variables declaration//GEN-END:variables
 }
