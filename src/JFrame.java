@@ -19,12 +19,14 @@ public class JFrame extends javax.swing.JFrame {
     int posizioni[][]=new int[8][8];
     Pedina Pedine[]=new Pedina[24];
     Image imgBlu;
+    ImageIcon iconBlu;
     Image imgRossa;
+    ImageIcon iconRossa;
     int ra, ca;//Riga-Colonna attuale
     int rp, cp;//Riga-Colonna precedente
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
-    char turno='r';//R=rosso B=blu DA IMPLEMENTARE
+    char turno='r';//R=rosso B=blu
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -784,10 +786,10 @@ public class JFrame extends javax.swing.JFrame {
     private void jButtonInizioGiocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInizioGiocoActionPerformed
         //Imposto icona pedine sulla scacchiera
         for(int i=0; i<12; i++){
-            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgBlu));
+            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(iconBlu);
         }      
         for(int i=12; i<24; i++){
-            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(new ImageIcon(imgRossa));
+            scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(iconRossa);
         }
         jButtonInizioGioco.setEnabled(false);
         iniziato=true;
@@ -888,12 +890,14 @@ public class JFrame extends javax.swing.JFrame {
         //Carico texture pedine
         try {
             imgBlu = ImageIO.read(getClass().getResource("resources/blu.png"));
+            iconBlu=new ImageIcon(imgBlu);
         } catch (IOException ex) {
             Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         try {
             imgRossa = ImageIO.read(getClass().getResource("resources/rosso.png"));
+            iconRossa=new ImageIcon(imgRossa);
         } catch (IOException ex) {
             Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -923,7 +927,7 @@ public class JFrame extends javax.swing.JFrame {
                                     if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==null)
                                         scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].setBackground(giallo);//Diagonale in basso verso sinistra
                                     else{
-                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==imgRossa && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].getIcon()==null){
+                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==(iconRossa) && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].setBackground(giallo);
                                         }
                                     }
@@ -934,7 +938,7 @@ public class JFrame extends javax.swing.JFrame {
                                     if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==null)
                                         scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].setBackground(giallo);//Diagonale in basso verso destra
                                     else{
-                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==imgRossa && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].getIcon()==null){
+                                        if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==(iconRossa) && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].setBackground(giallo);
                                         }
                                             
@@ -949,7 +953,7 @@ public class JFrame extends javax.swing.JFrame {
                                     if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==null)
                                         scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].setBackground(giallo);//Diagonalein alto verso sinistra
                                     else{
-                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==imgBlu && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].getIcon()==null){
+                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==(iconBlu) && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].setBackground(giallo);
                                         }
                                             
@@ -963,7 +967,7 @@ public class JFrame extends javax.swing.JFrame {
                                     if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==null)
                                         scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].setBackground(giallo);//Diagonalein alto verso destra
                                     else{
-                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==imgBlu && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].getIcon()==null){
+                                        if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==(iconBlu) && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].setBackground(giallo);
                                         }
                                             
