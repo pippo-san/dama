@@ -1036,10 +1036,10 @@ public class JFrame extends javax.swing.JFrame {
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
-                        scacchiera[ra][ca].setIcon(new ImageIcon(imgRossa));
+                        scacchiera[ra][ca].setIcon(iconRossa);
                         cambiaTurno();
                     }else{
-                        scacchiera[ra][ca].setIcon(new ImageIcon(imgBlu));
+                        scacchiera[ra][ca].setIcon(iconBlu);
                         cambiaTurno();
                     }
                 }
