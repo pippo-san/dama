@@ -23,7 +23,8 @@ public class JFrame extends javax.swing.JFrame {
     Image imgRossa;
     ImageIcon iconRossa;
     int ra, ca;//Riga-Colonna attuale
-    int rp, cp;//Riga-Colonna precedente
+    int rp, cp;
+    int rDie, cDie=-1;//Riga-Colonna precedente
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
     char turno='r';//R=rosso B=blu
@@ -929,6 +930,8 @@ public class JFrame extends javax.swing.JFrame {
                                     else{
                                         if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()-1].getIcon()==(iconRossa) && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()+2][Pedine[i].getY()-2].setBackground(giallo);
+                                            rDie=Pedine[i].getX()+1;
+                                            cDie=Pedine[i].getY()-1;
                                         }
                                     }
                                 } catch (Exception e) {
@@ -940,6 +943,8 @@ public class JFrame extends javax.swing.JFrame {
                                     else{
                                         if(scacchiera[Pedine[i].getX()+1][Pedine[i].getY()+1].getIcon()==(iconRossa) && scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()+2][Pedine[i].getY()+2].setBackground(giallo);
+                                            rDie=Pedine[i].getX()+1;
+                                            cDie=Pedine[i].getY()+1;
                                         }
                                             
                                     }
@@ -955,6 +960,8 @@ public class JFrame extends javax.swing.JFrame {
                                     else{
                                         if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()-1].getIcon()==(iconBlu) && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()-2][Pedine[i].getY()-2].setBackground(giallo);
+                                            rDie=Pedine[i].getX()-1;
+                                            cDie=Pedine[i].getY()-1;
                                         }
                                             
                                     }
@@ -969,6 +976,8 @@ public class JFrame extends javax.swing.JFrame {
                                     else{
                                         if(scacchiera[Pedine[i].getX()-1][Pedine[i].getY()+1].getIcon()==(iconBlu) && scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].getIcon()==null){
                                             scacchiera[Pedine[i].getX()-2][Pedine[i].getY()+2].setBackground(giallo);
+                                            rDie=Pedine[i].getX()-1;
+                                            cDie=Pedine[i].getY()+1;
                                         }
                                             
                                     }
@@ -1008,6 +1017,16 @@ public class JFrame extends javax.swing.JFrame {
             return false;
     }
     
+    private boolean eliminaPedina(int i){
+        if(rDie==Pedine[i].getX() && Pedine[i].isViva()){//Se non è viva non ha senso controllare
+                if(cDie==Pedine[i].getY()){
+                    //System.out.println(Pedine[i].toString());
+                    return true;
+                }
+            }
+            return false;
+    }
+    
     private void togliGiallo(){
         for(int r = 0; r < 8; r++) {
                 for(int c = 0; c < 8; c++) {
@@ -1033,6 +1052,7 @@ public class JFrame extends javax.swing.JFrame {
         if(scacchiera[ra][ca].getBackground() == giallo) {
             for(int i = 0; i < 24; i++) {
                 if(trovaPedinaVecchia(i)) {
+                    mangia();
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
@@ -1058,7 +1078,16 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void mangia(){
-        
+        if(rDie!=-1 && cDie!=-1){
+            for(int i = 0; i < 24; i++) {
+                if(eliminaPedina(i)) {
+                    Pedine[i].setViva(false);
+                    scacchiera[rDie][cDie].setIcon(null);
+                }
+            }
+        }
+        rDie=-1;
+        cDie=-1;
     }
     
     public static void main(String args[]) {
