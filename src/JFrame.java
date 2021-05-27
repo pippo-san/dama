@@ -922,9 +922,6 @@ public class JFrame extends javax.swing.JFrame {
                 for(int i=0; i<24; i++){
                         if(trovaPedina(i)){
                             System.out.println(Pedine[i].toString());
-                            if(Pedine[i].isDama())
-                                selezionaDama(i);
-                            else
                                 seleziona(i);
                             pedinaisSelezionata=true;
                             break;
