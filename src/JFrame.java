@@ -987,6 +987,7 @@ public class JFrame extends javax.swing.JFrame {
             jLabelTurno.setText("Turno: rosso");
             turno='r';
         }
+        diventaDama();//Controlla se qualche pedina è dama
     }
     
     private void spostaPedina(){
@@ -1156,6 +1157,26 @@ public class JFrame extends javax.swing.JFrame {
             } catch (Exception e) {
             }
     }
+    }
+    
+    private void diventaDama(){
+        for(int c=0; c<=7; c++){
+            if(scacchiera[0][c].getIcon()==iconRossa){
+                for(int i = 0; i < 24; i++){
+                    if(trovaPedina(i))
+                        Pedine[i].setDama(true);
+                }
+            }
+        }
+        
+        for(int c=0; c<=7; c++){
+            if(scacchiera[7][c].getIcon()==iconBlu){
+                for(int i = 0; i < 24; i++){
+                    if(trovaPedina(i))
+                        Pedine[i].setDama(true);
+                }
+            }
+        }
     }
 
     public static void main(String args[]) {
