@@ -23,8 +23,9 @@ public class JFrame extends javax.swing.JFrame {
     Image imgRossa;
     ImageIcon iconRossa;
     int ra, ca;//Riga-Colonna attuale
-    int rp, cp;
-    int rDie, cDie=-1;//Riga-Colonna precedente
+    int rp, cp;//Riga-Colonna precedente
+    int rDie, cDie=-1;
+    int rcDie[][]=new int[4][2];
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
     char turno='r';//R=rosso B=blu
@@ -918,6 +919,7 @@ public class JFrame extends javax.swing.JFrame {
         }
         
         if(!pedinaisSelezionata){
+            resetrcDie();
             if(iniziato){//Esegue solo se è stato premuto il bottone avvia
                 for(int i=0; i<24; i++){
                         if(trovaPedina(i)){
@@ -1024,16 +1026,16 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void mangia(){
-        if(rDie!=-1 && cDie!=-1){
-            for(int i = 0; i < 24; i++) {
-                if(eliminaPedina(i)) {
-                    Pedine[i].setViva(false);
-                    scacchiera[rDie][cDie].setIcon(null);
+        for(int r=0; r<4; r++){
+            if(rcDie[r][0]!=-1 && rcDie[r][1]!=-1){
+                for(int i = 0; i < 24; i++) {
+                    if(eliminaPedina(i)) {
+                        Pedine[i].setViva(false);
+                        scacchiera[rcDie[r][0]][rcDie[r][1]].setIcon(null);
+                    }
                 }
             }
         }
-        rDie=-1;
-        cDie=-1;
     }
     
     private void seleziona(int i){
@@ -1045,8 +1047,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[0][0]=Pedine[i].getX() + 1;
+                        rcDie[0][1]=Pedine[i].getY() - 1;
                     }
                 }
             } catch (Exception e) {
@@ -1058,8 +1060,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[1][0]=Pedine[i].getX() + 1;
+                        rcDie[1][1]=Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1075,8 +1077,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[0][0]= Pedine[i].getX() - 1;
+                        rcDie[0][1]= Pedine[i].getY() - 1;
                     }
 
                 }
@@ -1090,8 +1092,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[1][0]= Pedine[i].getX() - 1;
+                        rcDie[1][1]= Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1108,8 +1110,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[0][0]= Pedine[i].getX() + 1;
+                        rcDie[0][1]= Pedine[i].getY() - 1;
                     }
                 }
             } catch (Exception e) {
@@ -1121,8 +1123,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[1][0]= Pedine[i].getX() + 1;
+                        rcDie[1][1]= Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1138,8 +1140,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[2][0]= Pedine[i].getX() - 1;
+                        rcDie[2][1]= Pedine[i].getY() - 1;
                     }
 
                 }
@@ -1153,8 +1155,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[3][0]= Pedine[i].getX() - 1;
+                        rcDie[3][1]= Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1171,8 +1173,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[0][0]= Pedine[i].getX() + 1;
+                        rcDie[0][1]= Pedine[i].getY() - 1;
                     }
                 }
             } catch (Exception e) {
@@ -1184,8 +1186,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() + 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[1][0]= Pedine[i].getX() + 1;
+                        rcDie[1][1]= Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1201,8 +1203,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() - 1;
+                        rcDie[2][0]= Pedine[i].getX() - 1;
+                        rcDie[2][1]= Pedine[i].getY() - 1;
                     }
 
                 }
@@ -1216,8 +1218,8 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        rDie = Pedine[i].getX() - 1;
-                        cDie = Pedine[i].getY() + 1;
+                        rcDie[3][0]= Pedine[i].getX() - 1;
+                        rcDie[3][1]= Pedine[i].getY() + 1;
                     }
 
                 }
@@ -1243,6 +1245,13 @@ public class JFrame extends javax.swing.JFrame {
                         Pedine[i].setDama(true);
                 }
             }
+        }
+    }
+    
+    private void resetrcDie(){
+        for(int r=0; r<4; r++){
+            for(int c=0; c<2; c++)
+                rcDie[r][c]=-1;
         }
     }
 
