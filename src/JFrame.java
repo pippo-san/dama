@@ -12,8 +12,8 @@ public class JFrame extends javax.swing.JFrame {
     public JFrame() {
         initComponents();
     }
-    Color marrone = new Color(141, 83, 31);
-    Color bianco = new Color(98, 90, 70);
+    Color marrone = new Color(141, 83, 31);//Sfondo casella marrone
+    Color bianco = new Color(98, 90, 70);//Sfondo casella bianca
     Color giallo = new Color(255, 255, 153);//Selezione mosse caselle
     JButton scacchiera[][]=new JButton[8][8];
     int posizioni[][]=new int[8][8];
@@ -25,7 +25,8 @@ public class JFrame extends javax.swing.JFrame {
     int ra, ca;//Riga-Colonna attuale
     int rp, cp;//Riga-Colonna precedente
     int rDie, cDie=-1;
-    int rcDie[][]=new int[4][2];
+    int rcDie[][]=new int[4][2];//Indica la riga e colonna per eliminare la pedina(-1=nessuna riga/colonna)
+    int decidiDie=-1;//1-->r=r+1 c=c-1  2-->r=r+1 c=c+1  3-->r=r-1 c=c-1  4-->r=r-1 c=c+1
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
     char turno='r';//R=rosso B=blu
