@@ -18,10 +18,10 @@ public class JFrame extends javax.swing.JFrame {
     JButton scacchiera[][]=new JButton[8][8];
     int posizioni[][]=new int[8][8];
     Pedina Pedine[]=new Pedina[24];
-    Image imgBlu;
-    ImageIcon iconBlu;
-    Image imgRossa;
-    ImageIcon iconRossa;
+    Image imgBlu,imgDamaBlu;
+    ImageIcon iconBlu,iconDamaBlu;
+    Image imgRossa,imgDamaRossa;
+    ImageIcon iconRossa,iconDamaRossa;
     int ra, ca;//Riga-Colonna attuale
     int rp, cp;//Riga-Colonna precedente
     int rDie, cDie=-1;
@@ -904,6 +904,20 @@ public class JFrame extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        try {
+            imgDamaBlu = ImageIO.read(getClass().getResource("resources/bluDama.png"));
+            iconDamaBlu=new ImageIcon(imgDamaBlu);
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            imgDamaRossa = ImageIO.read(getClass().getResource("resources/rossoDama.png"));
+            iconDamaRossa=new ImageIcon(imgDamaRossa);
+        } catch (IOException ex) {
+            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowOpened
 
     private void mosse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mosse
@@ -1012,7 +1026,6 @@ public class JFrame extends javax.swing.JFrame {
                         cambiaTurno();
                     }
                 }
-
             }
         togliGiallo();
         togliImmagine();
@@ -1230,6 +1243,7 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void diventaDama(){
+        //Controlla riga in alto
         for(int c=0; c<=7; c++){
             if(scacchiera[0][c].getIcon()==iconRossa){
                 for(int i = 0; i < 24; i++){
@@ -1239,6 +1253,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         }
         
+        //Controlla riga in basso
         for(int c=0; c<=7; c++){
             if(scacchiera[7][c].getIcon()==iconBlu){
                 for(int i = 0; i < 24; i++){
