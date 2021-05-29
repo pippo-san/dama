@@ -1050,18 +1050,18 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private int pedinaMangiata(int i){
-        if(Pedine[i].getX()+1==ra && Pedine[i].getY()-1==ca){//di
+        if(Pedine[i].getX()+1==ra && Pedine[i].getY()-1==ca){//Diagonale in basso verso sinistra
             
         }
         
-        if(Pedine[i].getX()+1==ra && Pedine[i].getY()+1==ca){
+        if(Pedine[i].getX()+1==ra && Pedine[i].getY()+1==ca){//Diagonale in basso verso destra
             
         }
         
-        if(Pedine[i].getX()-1==ra && Pedine[i].getY()-1==ca){
+        if(Pedine[i].getX()-1==ra && Pedine[i].getY()-1==ca){//Diagonale in alto verso sinistra
             
         }
-        if(Pedine[i].getX()+-1==ra && Pedine[i].getY()+1==ca){
+        if(Pedine[i].getX()+-1==ra && Pedine[i].getY()+1==ca){//Diagonale in alto verso destra
             
         }
     }
@@ -1118,7 +1118,7 @@ public class JFrame extends javax.swing.JFrame {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
                 if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null) {
-                    scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonalein alto verso sinistra
+                    scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonale in alto verso sinistra
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
@@ -1133,7 +1133,7 @@ public class JFrame extends javax.swing.JFrame {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
                 if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null) {
-                    scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonalein alto verso destra
+                    scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonale in alto verso destra
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
