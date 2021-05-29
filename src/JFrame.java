@@ -1247,8 +1247,11 @@ public class JFrame extends javax.swing.JFrame {
         for(int c=0; c<=7; c++){
             if(scacchiera[0][c].getIcon()==iconRossa){
                 for(int i = 0; i < 24; i++){
-                    if(trovaPedina(i))
+                    if(trovaPedina(i)){
                         Pedine[i].setDama(true);
+                        scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(iconDamaRossa);
+                    }
+                        
                 }
             }
         }
@@ -1257,8 +1260,11 @@ public class JFrame extends javax.swing.JFrame {
         for(int c=0; c<=7; c++){
             if(scacchiera[7][c].getIcon()==iconBlu){
                 for(int i = 0; i < 24; i++){
-                    if(trovaPedina(i))
+                    if(trovaPedina(i)){
                         Pedine[i].setDama(true);
+                        scacchiera[Pedine[i].getX()][Pedine[i].getY()].setIcon(iconDamaBlu);
+                    }
+                        
                 }
             }
         }
