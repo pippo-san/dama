@@ -942,10 +942,12 @@ public class JFrame extends javax.swing.JFrame {
                             if(!Pedine[i].isDama())//Utilizzo il metodo selezionaDamaColore() per le dame
                                 seleziona(i);
                             else{
-                                if(Pedine[i].getColore()=='r')
+                                if(Pedine[i].getColore()=='r' && turno=='r')
                                     selezionaDamaRosso(i);
-                                else
+                                else{
+                                    if(Pedine[i].getColore()=='b' && turno=='b')
                                     selezionaDamaBlu(i);
+                                }
                             }
                             pedinaisSelezionata=true;
                             break;
