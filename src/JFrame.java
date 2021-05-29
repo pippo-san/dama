@@ -1023,7 +1023,7 @@ public class JFrame extends javax.swing.JFrame {
         if(scacchiera[ra][ca].getBackground() == giallo) {
             for(int i = 0; i < 24; i++) {
                 if(trovaPedinaVecchia(i)) {
-                    mangia();
+                    pedinaMangiata(i);
                     Pedine[i].setX(ra);
                     Pedine[i].setY(ca);
                     if(turno == 'r') {
@@ -1049,20 +1049,40 @@ public class JFrame extends javax.swing.JFrame {
         pedinaisSelezionata=false;
     }
     
-    private int pedinaMangiata(int i){
-        if(Pedine[i].getX()+1==ra && Pedine[i].getY()-1==ca){//Diagonale in basso verso sinistra
-            
+    private void pedinaMangiata(int i){
+        if(Pedine[i].getX()+2==ra && Pedine[i].getY()-2==ca){//Diagonale in basso verso sinistra
+            for(int i2 = 0; i2 < 24; i2++){
+                if(Pedine[i2].getX()==Pedine[i].getX()+1 && Pedine[i2].getY()==Pedine[i].getY()-1){
+                    Pedine[i2].setViva(false);
+                    scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                }
+            }
         }
         
-        if(Pedine[i].getX()+1==ra && Pedine[i].getY()+1==ca){//Diagonale in basso verso destra
-            
+        if(Pedine[i].getX()+2==ra && Pedine[i].getY()+2==ca){//Diagonale in basso verso destra
+            for(int i2 = 0; i2 < 24; i2++){
+                if(Pedine[i2].getX()==Pedine[i].getX()+1 && Pedine[i2].getY()==Pedine[i].getY()+1){
+                    Pedine[i2].setViva(false);
+                    scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                }
+            }
         }
         
-        if(Pedine[i].getX()-1==ra && Pedine[i].getY()-1==ca){//Diagonale in alto verso sinistra
-            
+        if(Pedine[i].getX()-2==ra && Pedine[i].getY()-2==ca){//Diagonale in alto verso sinistra
+            for(int i2 = 0; i2 < 24; i2++){
+                if(Pedine[i2].getX()==Pedine[i].getX()-1 && Pedine[i2].getY()==Pedine[i].getY()-1){
+                    Pedine[i2].setViva(false);
+                    scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                }
+            }
         }
-        if(Pedine[i].getX()+-1==ra && Pedine[i].getY()+1==ca){//Diagonale in alto verso destra
-            
+        if(Pedine[i].getX()-2==ra && Pedine[i].getY()+2==ca){//Diagonale in alto verso destra
+            for(int i2 = 0; i2 < 24; i2++){
+                if(Pedine[i2].getX()==Pedine[i].getX()-1 && Pedine[i2].getY()==Pedine[i].getY()+1){
+                    Pedine[i2].setViva(false);
+                    scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                }
+            }
         }
     }
     
