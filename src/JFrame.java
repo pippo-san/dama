@@ -1003,14 +1003,20 @@ public class JFrame extends javax.swing.JFrame {
     
     private void cambiaTurno(){
         if(turno=='r'){
+            if(ra==0){
+                diventaDama();//Controlla se qualche pedina è dama
+            }
             jLabelTurno.setText("Turno: blu");
             turno='b';
         }
         else{
+            if(ra==7){
+                diventaDama();//Controlla se qualche pedina è dama
+            }
             jLabelTurno.setText("Turno: rosso");
             turno='r';
-        }
-        diventaDama();//Controlla se qualche pedina è dama
+            
+        }             
     }
     
     private void spostaPedina(){
