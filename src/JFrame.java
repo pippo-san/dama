@@ -1038,8 +1038,9 @@ public class JFrame extends javax.swing.JFrame {
         pedinaisSelezionata=false;
     }
     
-    private void mangiataMultipla(){      
-            while (puòMangiare) {
+    private void mangiataMultipla(){
+        for(int t =0; t<3; t++){
+            if (puòMangiare) {
                 for (int i = 0; i < 24; i++) {
                     if (trovaPedina(i)) {
                         if (turno == 'r') {
@@ -1061,6 +1062,7 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         }
+    }
     
     private void pedinaMangiata(int i){
         if(Pedine[i].getX()+2==ra && Pedine[i].getY()-2==ca){//Diagonale in basso verso sinistra
