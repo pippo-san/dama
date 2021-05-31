@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class JFrame extends javax.swing.JFrame {
 
@@ -919,6 +920,7 @@ public class JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void mosse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mosse
+        vittoria();
         for(int r=0; r<8; r++){
             for(int c=0; c<8; c++){
                 if(evt.getActionCommand()==scacchiera[r][c].getActionCommand()){
@@ -1039,7 +1041,7 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void mangiataMultipla(){
-        for(int t =0; t<3; t++){
+        for(int t =0; t<5; t++){
             if (puòMangiare) {
                 for (int i = 0; i < 24; i++) {
                     if (trovaPedina(i)) {
@@ -1049,14 +1051,12 @@ public class JFrame extends javax.swing.JFrame {
                             } else {
                                 seleziona(i);
                             }
-                            //cambiaTurno();
                         } else {
                             if (Pedine[i].isDama()) {
                                 selezionaDamaBlu(i);
                             } else {
                                 seleziona(i);
                             }
-                            //cambiaTurno();
                         }
                     }
                 }
@@ -1311,6 +1311,24 @@ public class JFrame extends javax.swing.JFrame {
                         
                 }
             }
+        }
+    }
+    
+    private void vittoria(){
+        int r=0,b=0;
+        for(int i=0; i<24; i++){
+            if(Pedine[i].getColore()=='r' && !Pedine[i].isViva()){
+                r++;
+            }
+            if(Pedine[i].getColore()=='b' && !Pedine[i].isViva()){
+                b++;
+            }
+        }
+        if(b==12){
+            JOptionPane.showMessageDialog(null, "Ha vinto la squadra rossa");
+        }
+        if(r==12){
+            JOptionPane.showMessageDialog(null, "Ha vinto la squadra blu");
         }
     }
 
