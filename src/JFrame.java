@@ -956,6 +956,7 @@ public class JFrame extends javax.swing.JFrame {
                 for(int i=0; i<24; i++){
                         if(trovaPedina(i)){
                             System.out.println(Pedine[i].toString());
+                            puòMangiare=false;
                             if(!Pedine[i].isDama())//Utilizzo il metodo selezionaDamaColore() per le dame
                                 seleziona(i);
                             else{
@@ -1138,7 +1139,6 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void seleziona(int i){
-        puòMangiare=false;
         if ((Pedine[i].getColore() == 'b' && turno == 'b')) {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
@@ -1147,7 +1147,7 @@ public class JFrame extends javax.swing.JFrame {
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
+                        puòMangiare=true;                       
                     }
                 }
             } catch (Exception e) {
@@ -1199,7 +1199,6 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void selezionaDamaBlu(int i){
-        puòMangiare=false;
         try {
                 //Controllo l'icon per sapere se la casella è già occupata
                 if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
@@ -1259,7 +1258,6 @@ public class JFrame extends javax.swing.JFrame {
     }
     
     private void selezionaDamaRosso(int i){
-        puòMangiare=false;
         try {
                 //Controllo l'icon per sapere se la casella è già occupata
                 if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
