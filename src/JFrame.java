@@ -27,7 +27,6 @@ public class JFrame extends javax.swing.JFrame {
     int rp, cp;//Riga-Colonna precedente
     boolean iniziato=false;
     boolean pedinaisSelezionata=false;
-    boolean puòMangiare=false;//Serve a capire se si può fare una mangiata multipla
     char turno='r';//R=rosso B=blu
     int contaMortiBlu=0;
     int contaMortiRosse=0;
@@ -956,7 +955,6 @@ public class JFrame extends javax.swing.JFrame {
                 for(int i=0; i<24; i++){
                         if(trovaPedina(i)){
                             System.out.println(Pedine[i].toString());
-                            puòMangiare=false;
                             if(!Pedine[i].isDama())//Utilizzo il metodo selezionaDamaColore() per le dame
                                 seleziona(i);
                             else{
@@ -974,7 +972,7 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         else{
-            spostaPedina();
+            spostaPedina();       
         }
 
     }//GEN-LAST:event_mosse
@@ -1039,58 +1037,22 @@ public class JFrame extends javax.swing.JFrame {
                             scacchiera[ra][ca].setIcon(iconDamaRossa);
                         else
                             scacchiera[ra][ca].setIcon(iconRossa);
+                        cambiaTurno();
                     }else{
                         if(Pedine[i].isDama())
                             scacchiera[ra][ca].setIcon(iconDamaBlu);
                         else    
                             scacchiera[ra][ca].setIcon(iconBlu);
+                        cambiaTurno();
                     }
-                    
                 }
             }
         togliGiallo();
         togliImmagine();
-        mangiataMultipla();
-        if(!puòMangiare)          
-            cambiaTurno();
-        }else{         
-            togliGiallo();
+        }else{
+            togliGiallo();          
         }
         pedinaisSelezionata=false;
-    }
-    
-    private void mangiataMultipla(){
-        for(int t =0; t<5; t++){
-            if (puòMangiare) {
-                for (int i = 0; i < 24; i++) {
-                    if (trovaPedina(i)) {
-                        if (turno == 'r') {
-                            if (Pedine[i].isDama()) {
-                                selezionaDamaRosso(i);
-                            } else {
-                                seleziona(i);
-                            }
-                        } else {
-                            if (Pedine[i].isDama()) {
-                                selezionaDamaBlu(i);
-                            } else {
-                                seleziona(i);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    private void contaMorti(){
-        if(turno=='r'){
-            contaMortiBlu++;
-            jLabelMortiBlu.setText("X "+contaMortiBlu);
-        }else{
-            contaMortiRosse++;
-            jLabelMortiRosse.setText("X "+contaMortiRosse);
-        }     
     }
     
     private void pedinaMangiata(int i){
@@ -1142,24 +1104,22 @@ public class JFrame extends javax.swing.JFrame {
         if ((Pedine[i].getColore() == 'b' && turno == 'b')) {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonale in basso verso sinistra
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;                       
                     }
                 }
             } catch (Exception e) {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonale in basso verso destra
                 } else {
                     if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1170,12 +1130,11 @@ public class JFrame extends javax.swing.JFrame {
         if (Pedine[i].getColore() == 'r' && turno == 'r') {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonale in alto verso sinistra
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1184,12 +1143,11 @@ public class JFrame extends javax.swing.JFrame {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonale in alto verso destra
                 } else {
                     if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1201,24 +1159,22 @@ public class JFrame extends javax.swing.JFrame {
     private void selezionaDamaBlu(int i){
         try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonale in basso verso sinistra
                 } else {
                     if ((scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) || scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconDamaRossa)) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
                 }
             } catch (Exception e) {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonale in basso verso destra
                 } else {
                     if ((scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) || scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconDamaRossa))  && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1229,12 +1185,11 @@ public class JFrame extends javax.swing.JFrame {
         if (Pedine[i].getColore() == 'r' && turno == 'r'||Pedine[i].isDama()) {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonalein alto verso sinistra
                 } else {
                     if ((scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconRossa) || scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconDamaRossa))  && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1243,12 +1198,11 @@ public class JFrame extends javax.swing.JFrame {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonalein alto verso destra
                 } else {
                     if ((scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconRossa) || scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconDamaRossa))  && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1260,24 +1214,22 @@ public class JFrame extends javax.swing.JFrame {
     private void selezionaDamaRosso(int i){
         try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonale in basso verso sinistra
                 } else {
                     if ((scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) || scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() - 1].getIcon() == (iconDamaBlu))  && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
                 }
             } catch (Exception e) {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonale in basso verso destra
                 } else {
                     if ((scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) || scacchiera[Pedine[i].getX() + 1][Pedine[i].getY() + 1].getIcon() == (iconDamaBlu)) && scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() + 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1288,12 +1240,11 @@ public class JFrame extends javax.swing.JFrame {
         if (Pedine[i].getColore() == 'r' && turno == 'r'||Pedine[i].isDama()) {
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].setBackground(giallo);//Diagonalein alto verso sinistra
                 } else {
                     if ((scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconBlu) || scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() - 1].getIcon() == (iconDamaBlu)) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() - 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1302,12 +1253,11 @@ public class JFrame extends javax.swing.JFrame {
             }
             try {
                 //Controllo l'icon per sapere se la casella è già occupata
-                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null && !puòMangiare) {
+                if (scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == null) {
                     scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].setBackground(giallo);//Diagonalein alto verso destra
                 } else {
                     if ((scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconBlu) || scacchiera[Pedine[i].getX() - 1][Pedine[i].getY() + 1].getIcon() == (iconDamaBlu)) && scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].getIcon() == null) {
                         scacchiera[Pedine[i].getX() - 2][Pedine[i].getY() + 2].setBackground(giallo);
-                        puòMangiare=true;
                     }
 
                 }
@@ -1342,6 +1292,16 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         }
+    }
+    
+    private void contaMorti(){
+        if(turno=='r'){
+            contaMortiBlu++;
+            jLabelMortiBlu.setText("X "+contaMortiBlu);
+        }else{
+            contaMortiRosse++;
+            jLabelMortiRosse.setText("X "+contaMortiRosse);
+        }     
     }
     
     private void vittoria(){
