@@ -29,6 +29,8 @@ public class JFrame extends javax.swing.JFrame {
     boolean pedinaisSelezionata=false;
     boolean puòMangiare=false;//Serve a capire se si può fare una mangiata multipla
     char turno='r';//R=rosso B=blu
+    int contaMortiBlu=0;
+    int contaMortiRosse=0;
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,6 +119,10 @@ public class JFrame extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jButtonInizioGioco = new javax.swing.JButton();
         jLabelTurno = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabelMortiRosse = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabelMortiBlu = new javax.swing.JLabel();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setText("8");
@@ -775,10 +781,22 @@ public class JFrame extends javax.swing.JFrame {
                 jButtonInizioGiocoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+        getContentPane().add(jButtonInizioGioco, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 275, -1, -1));
 
         jLabelTurno.setText("turno: rosso");
-        getContentPane().add(jLabelTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 206, 100, 30));
+        getContentPane().add(jLabelTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 100, 30));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/rosso.png"))); // NOI18N
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 80, -1));
+
+        jLabelMortiRosse.setText("X 0");
+        getContentPane().add(jLabelMortiRosse, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 117, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/blu.png"))); // NOI18N
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 80, 80));
+
+        jLabelMortiBlu.setText("X 0");
+        getContentPane().add(jLabelMortiBlu, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 467, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1064,12 +1082,23 @@ public class JFrame extends javax.swing.JFrame {
         }
     }
     
+    private void contaMorti(){
+        if(turno=='r'){
+            contaMortiBlu++;
+            jLabelMortiBlu.setText("X "+contaMortiBlu);
+        }else{
+            contaMortiRosse++;
+            jLabelMortiRosse.setText("X "+contaMortiRosse);
+        }     
+    }
+    
     private void pedinaMangiata(int i){
         if(Pedine[i].getX()+2==ra && Pedine[i].getY()-2==ca){//Diagonale in basso verso sinistra
             for(int i2 = 0; i2 < 24; i2++){
                 if(Pedine[i2].getX()==Pedine[i].getX()+1 && Pedine[i2].getY()==Pedine[i].getY()-1){
                     Pedine[i2].setViva(false);
                     scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                    contaMorti();
                 }
             }
         }
@@ -1079,6 +1108,7 @@ public class JFrame extends javax.swing.JFrame {
                 if(Pedine[i2].getX()==Pedine[i].getX()+1 && Pedine[i2].getY()==Pedine[i].getY()+1){
                     Pedine[i2].setViva(false);
                     scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                    contaMorti();
                 }
             }
         }
@@ -1088,6 +1118,7 @@ public class JFrame extends javax.swing.JFrame {
                 if(Pedine[i2].getX()==Pedine[i].getX()-1 && Pedine[i2].getY()==Pedine[i].getY()-1){
                     Pedine[i2].setViva(false);
                     scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                    contaMorti();
                 }
             }
         }
@@ -1096,6 +1127,7 @@ public class JFrame extends javax.swing.JFrame {
                 if(Pedine[i2].getX()==Pedine[i].getX()-1 && Pedine[i2].getY()==Pedine[i].getY()+1){
                     Pedine[i2].setViva(false);
                     scacchiera[Pedine[i2].getX()][Pedine[i2].getY()].setIcon(null);
+                    contaMorti();
                 }
             }
         }
@@ -1440,7 +1472,9 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1448,6 +1482,8 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelMortiBlu;
+    private javax.swing.JLabel jLabelMortiRosse;
     private javax.swing.JLabel jLabelTurno;
     // End of variables declaration//GEN-END:variables
 }
