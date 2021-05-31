@@ -953,7 +953,7 @@ public class JFrame extends javax.swing.JFrame {
                 }
             }
         else{
-            spostaPedina();       
+            spostaPedina();
         }
 
     }//GEN-LAST:event_mosse
@@ -1029,7 +1029,17 @@ public class JFrame extends javax.swing.JFrame {
             }
         togliGiallo();
         togliImmagine();
-        if (puòMangiare) {
+        mangiataMultipla();
+        if(!puòMangiare)          
+            cambiaTurno();
+        }else{         
+            togliGiallo();
+        }
+        pedinaisSelezionata=false;
+    }
+    
+    private void mangiataMultipla(){      
+            while (puòMangiare) {
                 for (int i = 0; i < 24; i++) {
                     if (trovaPedina(i)) {
                         if (turno == 'r') {
@@ -1050,12 +1060,7 @@ public class JFrame extends javax.swing.JFrame {
                     }
                 }
             }
-        cambiaTurno();
-        }else{
-            togliGiallo();
         }
-        pedinaisSelezionata=false;
-    }
     
     private void pedinaMangiata(int i){
         if(Pedine[i].getX()+2==ra && Pedine[i].getY()-2==ca){//Diagonale in basso verso sinistra
